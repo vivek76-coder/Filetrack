@@ -6,6 +6,7 @@ mongoose.connect(process.env.DB)
 
 const express = require('express')
 const morgan = require('morgan')
+const { singup } = require('./controller/user.conntroller')
 
 const app = express()
 app.listen(process.env.PORT || 8080)
@@ -13,4 +14,7 @@ app.listen(process.env.PORT || 8080)
 app.use(express.static('view'))
 app.use(morgan('dev'))
 
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
 
+app.post('/signup', singup)
