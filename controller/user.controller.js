@@ -1,7 +1,7 @@
 const UserModel = require("../model/user.model.js");
 const bcrypt = require("bcrypt");
 
-const singup = async (req, res) => {
+const signup = async (req, res) => {
   try {
     await UserModel.create(req.body);
     res.status(200).json({ message: "success" });
@@ -29,6 +29,6 @@ const login = async (req, res) => {
   }
 };
 module.exports = {
-  singup,
+  signup,
   login,
 };

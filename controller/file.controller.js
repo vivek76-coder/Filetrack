@@ -1,6 +1,6 @@
-const FileModel = require("../model/file.model")
+const FileModel = require("../model/file.model.js")
 
-const createfile = (req, res)=>{
+const createFile = (req, res)=>{
 	try{
 		res.send("sucesss")
 	} catch(err) {
@@ -9,5 +9,5 @@ const createfile = (req, res)=>{
 }
 
 module.exports = {
-	createfile
+	createFile
 }
