@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.19.0/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -14,7 +15,7 @@
             <h1 class="font-semibold">FileTrack</h1>
         </div>
         <div class="h-px border border-gray-100 -mx-4"></div>
-        <form class="p-4" method="post" action="">
+        <form class="p-4"  action="" onsubmit="login(event)">
             <div class="space-y-1">
                 <label class="text-medium block text-gray-900">Email</label>
                 <input type="email" class="border  border-gray-300 rounded w-full p-2" name="email" placeholder="abc@gmail.com" required />
@@ -29,5 +30,6 @@
             <p class="text-center text-gray-500">Dont have an account?<a class="text-green-500 cursor-pointer" href="./signup.html">Sign Up</a></p>
         </div>
     </div>
+    <script src="./js/login.js"></script>
 </body>
 </html>

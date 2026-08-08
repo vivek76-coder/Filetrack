@@ -32,7 +32,7 @@ const userSchema = new Schema(
 );
 
 // checking duplicate number
-userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function () {
   const count =  await model("User").countDocuments({ mobile: this.mobile });
   if (count > 0) throw new Error("mobile alreay exist");
   
@@ -45,10 +45,9 @@ userSchema.pre("save", async function (next) {
   });
 
 // encryptinng password
-  userSchema.pre("save", async function(next){
+  userSchema.pre("save", async function(){
     const encryptedPassword = await bcrypt.hash(this.password.toString(), 12);
     this.password = encryptedPassword;
-
   })
 const UserModel = model("User", userSchema);
 module.exports = UserModel;
